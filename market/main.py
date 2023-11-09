@@ -1,4 +1,7 @@
-from data import addProduct, selectAllProduct, selectForId, dellAllTable, create_table
+from data import Data, DB_FILE
+
+data = DB_FILE
+
 
 class Product:
     def __init__(self, name, value, amount):
@@ -32,8 +35,11 @@ value = insertValue()
 amount = insertAmount()
 
 productInputed = Product(name, value, amount)
-productList = vars(productInputed)
+productList = productInputed.organized()
 
-#selectAllProduct()
+
+dataBaseConnect = Data(data)
+dataBaseConnect.selectAllProduct()
+
 #addProduct(productList)
 
