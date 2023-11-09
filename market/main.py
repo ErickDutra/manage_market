@@ -18,28 +18,28 @@ class Product:
         ]
         return product
         
-def insertName():
+def insert_name():
     name_product = str(input('name:')) 
     return name_product
     
-def insertValue():
+def insert_value():
     value_product= float(input('value:'))
     return value_product
     
-def insertAmount():    
-    quantityAmount = int(input('amount:'))
-    return quantityAmount
+def insert_amount():    
+    quantity_amount = int(input('amount:'))
+    return quantity_amount
     
-name = insertName()
-value = insertValue()
-amount = insertAmount()
+name = insert_name()
+value = insert_value()
+amount = insert_amount()
 
-productInputed = Product(name, value, amount)
-productList = productInputed.organized()
+product_inputed = Product(name, value, amount)
+product_list = product_inputed.organized()
 
 
-dataBaseConnect = Data(data)
-dataBaseConnect.selectAllProduct()
+data_base_connect = Data(data)
+data_base_connect.select_all_product()
 
-#addProduct(productList)
+#dataBaseConnect.addProduct(productList)
 

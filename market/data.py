@@ -29,7 +29,7 @@ class Data:
         connection.close()
 
 
-    def dellAllTable(self):
+    def dell_all_table(self):
         connection = sqlite3.connect(self.data)
         cursor = connection.cursor()
 
@@ -39,7 +39,7 @@ class Data:
         connection.close()
 
 
-    def addProduct(self,list):
+    def add_product(self,list):
         connection = sqlite3.connect(self.data)
         cursor = connection.cursor()
 
@@ -51,7 +51,7 @@ class Data:
         connection.close()
 
 
-    def selectAllProduct(self):
+    def select_all_product(self):
         connection = sqlite3.connect(self.data)
         cursor = connection.cursor()
 
@@ -68,13 +68,13 @@ class Data:
         connection.close()
 
 
-    def selectForId(self, numberId):
+    def select_for_id(self, number_id):
         connection = sqlite3.connect(self.data)
         cursor = connection.cursor()
 
         sql = f"SELECT * FROM {TABLE_NAME} " f"WHERE id = ? "
 
-        cursor.execute(sql, numberId)
+        cursor.execute(sql, number_id)
         row = cursor.fetchone()
         print(row)
 
