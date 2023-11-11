@@ -45,7 +45,7 @@ class Data:
 
         sql = f"INSERT INTO {TABLE_NAME}(NAME, VALUE, AMOUNT) " f"VALUES ( :name, :value, :amount )"
 
-        cursor.execute(sql, (list))
+        cursor.executemany(sql, (list))
         connection.commit()
         cursor.close()
         connection.close()
