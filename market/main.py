@@ -1,28 +1,27 @@
 from data import Data, DB_FILE
+from dataclasses import dataclass
 
 data = DB_FILE
 
-
+@dataclass
 class ProductList:
-    def __init__(self):
-        self.list_products = []
+    list_products : list
 
 
     def insert_product(self, product):
             self.list_products.append(product)
             
-    def listing_products(self):
+    def listing_products(self,):
         print()
         product = self.list_products
         return product
-        print()
+  
    
-
+@dataclass
 class Product:
-    def __init__(self, name, value, amount):
-        self.name = name
-        self.value = value
-        self.amount = amount
+    name : str
+    value : float
+    amount : int
         
 
 def insert_name():
@@ -37,22 +36,22 @@ def insert_amount():
     quantity_amount = int(input('amount:'))
     return quantity_amount
  
-product_list = ProductList()
+ 
+products = []
+product_list = ProductList(products)
 
-for x in range(2):
-    name = insert_name()
-    value = insert_value()
-    amount = insert_amount()
-    
-    product_insert = Product(name, value, amount)
-    product_list.insert_product(vars(product_insert))
-    
-product_list.listing_products()
+name = 'caju'
+value = 40
+amount = 39
 
-lista = product_list.listing_products()
+product_insert = Product(name, value, amount)
+print(product_insert)
+product_list.insert_product(product_insert)
+print(product_list.listing_products())
 
 
-data_base_connect = Data(data)
-data_base_connect.add_product(lista)
-data_base_connect.select_all_product()
+
+#data_base_connect = Data(data)
+#data_base_connect.add_product()
+#data_base_connect.select_all_product()
 
