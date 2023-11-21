@@ -1,5 +1,5 @@
 from data import Data, DB_FILE
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 
 data = DB_FILE
 
@@ -40,18 +40,17 @@ def insert_amount():
 products = []
 product_list = ProductList(products)
 
-name = 'caju'
-value = 40
-amount = 39
+name = insert_name()
+value = insert_value()
+amount = insert_amount()
 
 product_insert = Product(name, value, amount)
-print(product_insert)
+product_insert = asdict(product_insert)
+
+
 product_list.insert_product(product_insert)
 print(product_list.listing_products())
-
-
-
-#data_base_connect = Data(data)
-#data_base_connect.add_product()
-#data_base_connect.select_all_product()
+data_base_connect = Data(data)
+data_base_connect.add_product(product_list.listing_products())
+data_base_connect.select_all_product()
 
